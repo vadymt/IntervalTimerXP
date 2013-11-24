@@ -22,6 +22,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="vlt.android.intervaltimerxp.AddTrainingActivity"
+            android:label="@string/title_activity_add_training" >
+        </activity>
     </application>
 
 </manifest>

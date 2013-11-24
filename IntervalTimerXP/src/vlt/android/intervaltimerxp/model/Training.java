@@ -5,7 +5,21 @@ import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable(tableName = "training")
 public class Training {
-	@DatabaseField(id = true, generatedId = true)
+	
+	public Training() {
+		
+	}
+
+	public Training(String exercize, int numberOfIntervals,
+			int workTimeForOneInterval, int restTimeForOneInterval) {
+		super();
+		this.exercize = exercize;
+		this.numberOfIntervals = numberOfIntervals;
+		this.workTimeForOneInterval = workTimeForOneInterval;
+		this.restTimeForOneInterval = restTimeForOneInterval;
+	}
+
+	@DatabaseField(generatedId = true)
 	private Integer id;
 
 	@DatabaseField(canBeNull = false, uniqueCombo = true)
