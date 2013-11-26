@@ -8,7 +8,7 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "training_record")
 public class TrainingRecord {
 
-	@DatabaseField(generatedId = true)
+	@DatabaseField(generatedId = true, allowGeneratedIdInsert = true)
 	private Integer id;
 
 	@DatabaseField(canBeNull = false)
@@ -16,7 +16,7 @@ public class TrainingRecord {
 
 	@DatabaseField(canBeNull = true)
 	private int lastIntervalRepeatCount;
-	
+
 	@DatabaseField(canBeNull = false)
 	private Date trainingDate;
 

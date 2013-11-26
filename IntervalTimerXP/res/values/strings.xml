@@ -15,5 +15,8 @@
     <string name="save">SAVE</string>
     <string name="add">Add</string>
     <string name="edit">Edit</string>
+    <string name="item_menu_title">Item menu</string>
+    <string name="remove">Remove</string>
+   
 
 </resources>

@@ -19,22 +19,7 @@ public class MainActivityTest extends
 	private ListView listView;
 	public static final int ADAPTER_COUNT = 9;
 
-	// private static Class<?> mainActivityClass;
-	//
-	// static
-	// {
-	// try
-	// {
-	// mainActivityClass =
-	// Class.forName("vlt.android.intervaltimerxp.MainActivity");
-	// }
-	// catch(ClassNotFoundException e)
-	// {
-	// throw new RuntimeException(e);
-	// }
-	// }
-	//
-	// @SuppressWarnings("unchecked")
+	
 	public MainActivityTest() {
 		super("vlt.android.intervaltimerxp", MainActivity.class);
 	}
@@ -68,11 +53,25 @@ public class MainActivityTest extends
 	}
 
 	public void testListViewClickTest() {
+		
 		solo.clickInList(0);
+		getInstrumentation().waitForIdleSync();
 		assertTrue(
 				"Couldn't find dialog add training!",
 				solo.searchText(mActivity.getResources().getString(
 						vlt.android.intervaltimerxp.R.string.edit)));
+	}
+	
+	public void testListViewLongClick() {
+		solo.clickLongInList(0);
+		assertTrue(
+				"Couldn't find edit button!",
+				solo.searchText(mActivity.getResources().getString(
+						vlt.android.intervaltimerxp.R.string.edit)));
+		assertTrue(
+				"Couldn't find remove button!",
+				solo.searchText(mActivity.getResources().getString(
+						vlt.android.intervaltimerxp.R.string.remove)));
 	}
 
 }

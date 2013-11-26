@@ -19,7 +19,7 @@ public class Training {
 		this.restTimeForOneInterval = restTimeForOneInterval;
 	}
 
-	@DatabaseField(generatedId = true)
+	@DatabaseField(generatedId = true, allowGeneratedIdInsert=true)
 	private Integer id;
 
 	@DatabaseField(canBeNull = false, uniqueCombo = true)
