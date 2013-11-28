@@ -10,5 +10,5 @@ Tatyana Tahistova
 
 #Memory usage
 Screenshots of how's the app is using memory:
-![Alt text](/path/to/img.jpg "Optional title")
+![Alt text](https://raw.github.com/vadymt/IntervalTimerXP/master/adb.jpg "Optional title")
 
