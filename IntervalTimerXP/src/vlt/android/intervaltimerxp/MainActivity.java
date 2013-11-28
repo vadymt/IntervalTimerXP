@@ -2,8 +2,10 @@ package vlt.android.intervaltimerxp;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+import vlt.android.intervaltimerxp.IntervalTimer.IntervalTimerTask;
 import vlt.android.intervaltimerxp.model.DatabaseHelper;
 import vlt.android.intervaltimerxp.model.Training;
 
@@ -16,6 +18,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.KeyguardManager;
 import android.content.Context;
+import android.content.Intent;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
@@ -58,6 +61,7 @@ public class MainActivity extends OrmLiteBaseActivity<DatabaseHelper> implements
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		Collections.sort(list);
 		adapter = new TrainingAdapter(context, list);
 		listView.setAdapter(adapter);
 		/*
@@ -86,8 +90,11 @@ public class MainActivity extends OrmLiteBaseActivity<DatabaseHelper> implements
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		Training training = adapter.getItem(arg2);
-		TrainingTimer timer = new TrainingTimer(context, training);
-		timer.doTraining();
+		Bundle bundle = new Bundle();
+		bundle.putSerializable("training", training);
+		Intent intent = new Intent(MainActivity.this, TrainingActivity.class);
+		intent.putExtras(bundle);
+		startActivity(intent);
 	}
 
 	public void onCreateContextMenu(ContextMenu menu, View v,
@@ -145,11 +152,14 @@ public class MainActivity extends OrmLiteBaseActivity<DatabaseHelper> implements
 				.findViewById(R.id.buttonSaveTraining);
 		if (training != null) {
 			textExcersize.setText(training.getExercize());
-			textNumberOfIntervals.setText(Integer.toString(training.getNumberOfIntervals()));
-			textRestDuratione.setText(Integer.toString(training.getRestTimeForOneInterval()));
-			textWorkDuration.setText(Integer.toString(training.getWorkTimeForOneInterval()));
+			textNumberOfIntervals.setText(Integer.toString(training
+					.getNumberOfIntervals()));
+			textRestDuratione.setText(Integer.toString(training
+					.getRestTimeForOneInterval()));
+			textWorkDuration.setText(Integer.toString(training
+					.getWorkTimeForOneInterval()));
 			textDescription.setText(training.getDescription());
-			
+
 		}
 		class OnClickListenerForSaveAndEdit implements View.OnClickListener {
 			private Training training;

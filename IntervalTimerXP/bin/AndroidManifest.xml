@@ -26,6 +26,18 @@
             android:name="vlt.android.intervaltimerxp.AddTrainingActivity"
             android:label="@string/title_activity_add_training" >
         </activity>
+        <activity
+            android:name="vlt.android.intervaltimerxp.TrainingActivity"
+            android:label="@string/title_activity_training" >
+        </activity>
+        <activity
+            android:name="vlt.android.intervaltimerxp.TrainingHistoryActivity"
+            android:label="@string/title_activity_training_history"
+            android:parentActivityName="com.j256.ormlite.android.apptools.OrmLiteBaseListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.j256.ormlite.android.apptools.OrmLiteBaseListActivity" />
+        </activity>
     </application>
 
 </manifest>

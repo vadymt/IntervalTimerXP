@@ -1,10 +1,12 @@
 package vlt.android.intervaltimerxp.model;
 
+import java.io.Serializable;
+
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable(tableName = "training")
-public class Training {
+public class Training implements Serializable, Comparable<Training>{
 	
 	public Training() {
 		
@@ -83,6 +85,12 @@ public class Training {
 
 	public void setRestTimeForOneInterval(int restTimeForOneInterval) {
 		this.restTimeForOneInterval = restTimeForOneInterval;
+	}
+
+	@Override
+	public int compareTo(Training another) {
+		// TODO Auto-generated method stub
+		return this.exercize.compareTo(another.exercize);
 	}
 
 }

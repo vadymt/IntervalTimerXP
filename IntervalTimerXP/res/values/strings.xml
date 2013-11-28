@@ -17,6 +17,10 @@
     <string name="edit">Edit</string>
     <string name="item_menu_title">Item menu</string>
     <string name="remove">Remove</string>
-   
+    <string name="start">START</string>
+    <string name="stop">STOP</string>
+    <string name="history">History</string>
+    <string name="title_activity_training">TrainingActivity</string>
+    <string name="title_activity_training_history">TrainingHistoryActivity</string>
 
 </resources>
