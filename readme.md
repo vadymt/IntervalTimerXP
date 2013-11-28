@@ -10,5 +10,8 @@ Tatyana Tahistova
 
 #Memory usage
 Screenshots of how's the app is using memory:
-![Alt text](https://raw.github.com/vadymt/IntervalTimerXP/master/adb.jpg "Optional title")
+![Alt text](https://raw.github.com/vadymt/IntervalTimerXP/master/adb.jpg "Overall usage")
+![Alt text](https://raw.github.com/vadymt/IntervalTimerXP/master/screenalloc.jpg "Allocation")
+![Alt text](https://raw.github.com/vadymt/IntervalTimerXP/master/screenheap.jpg "Heap")
+
 
