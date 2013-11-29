@@ -7,6 +7,7 @@ For a definition of interval training google for "tabata training".
 #Team members
 Vadym Turovskyi     
 Tatyana Tahistova
+Anastasiya Sergeieva
 
 #Memory usage
 Screenshots of how's the app is using memory:
